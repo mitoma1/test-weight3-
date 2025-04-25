@@ -24,8 +24,7 @@ Route::get('/register/step2', [WeightController::class, 'create'])->name('weight
 Route::post('/register/step2', [WeightController::class, 'store'])->name('weight.store.step2');
 
 // ログイン
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [LoginController::class, 'loginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
-
 // ログアウト
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
