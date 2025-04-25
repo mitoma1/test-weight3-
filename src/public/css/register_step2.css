@@ -1,0 +1,108 @@
+
+/* register_step2.css */
+
+/* 背景のグラデーション（ボタンの色より柔らかく薄いもの） */
+body {
+    background: linear-gradient(to bottom right, #f5d0fe, #fbd8e9); /* 薄い紫から淡いピンクのグラデーション */
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #333;
+}
+
+.min-h-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-white {
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+}
+
+.text-pink-400 {
+    color: #f472b6;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.text-gray-700 {
+    color: #4b5563;
+}
+
+.text-sm.text-gray-500 {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.right-4 {
+    right: 1rem;
+}
+
+.top-2.5 {
+    top: 0.625rem;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.py-2 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.bg-gradient-to-r {
+    background: linear-gradient(to right, #9d4edd, #ec4899);
+}
+
+.hover\:from-purple-400:hover {
+    background: linear-gradient(to right, #9d4edd, #ec4899);
+}
+
+.hover\:to-pink-400:hover {
+    background: linear-gradient(to right, #ec4899, #9d4edd);
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 修正: kgの位置を調整 */
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper span {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+}
+
+/* ボタンの下の余白を調整 */
+button[type="submit"] {
+    margin-top: 2rem; /* ボタンとフォーム間の余白を増やす */
+}
