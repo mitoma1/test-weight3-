@@ -1,0 +1,113 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダー */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #4CAF50;
+}
+
+/* フォームのスタイル */
+form {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 各入力フィールドのスタイル */
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* エラーメッセージのスタイル */
+.text-danger {
+    color: #ff0000;
+    font-size: 14px;
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 12px 32px; /* 横幅を広く、縦の余白も調整 */
+    background: linear-gradient(to right, #ec4899, #8b5cf6); /* グラデーションの色 */
+    color: white; /* 文字色 */
+    border: none; /* ボーダーなし */
+    border-radius: 6px; /* 角を丸くする */
+    font-size: 1rem; /* フォントサイズ */
+    cursor: pointer; /* カーソルをポインタにする */
+    transition: opacity 0.2s ease; /* ホバー時などの遷移 */
+    width: auto; /* 横幅を自動調整 */
+    max-width: 200px; /* 最大幅を少し広げる */
+}
+/* ホバー時にグラデーションを変更 */
+button.update-button:hover {
+    background: linear-gradient(45deg, #c5a1f9, #a1a3f8); /* グラデーションの逆転 */
+    transform: scale(1.05); /* 少し大きくなるエフェクト */
+}
+
+/* アクティブ時のスタイル */
+button.update-button:active {
+    transform: scale(0.98); /* クリック時に少し小さくなる */
+}
+
+/* 戻るボタンのスタイル */
+button.back-button {
+    background: linear-gradient(to right, #c5a7d5, #9c79d2); /* 淡い紫色のグラデーション */
+    color: white; /* テキストの色は白 */
+    border: none; /* ボーダーなし */
+    border-radius: 20px; /* 角丸（更新ボタンと同じ形） */
+    padding: 10px 25px; /* 内側の余白 */
+    font-size: 16px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    cursor: pointer; /* ポインタカーソル */
+    transition: background 0.3s ease, transform 0.2s ease; /* 背景色とアニメーション */
+}
+
+/* ホバー時のスタイル */
+button.back-button:hover {
+    background: linear-gradient(to right, #9c79d2, #c5a7d5); /* グラデーションを逆転 */
+    transform: scale(1.05); /* 少し大きくなるエフェクト */
+}
+
+/* アクティブ時のスタイル */
+button.back-button:active {
+    transform: scale(0.98); /* クリック時に少し小さくなる */
+}
+
+/* フォーカス時のスタイル（キーボード操作） */
+button.back-button:focus {
+    outline: none; /* フォーカスリングなし */
+    box-shadow: 0 0 10px rgba(156, 121, 210, 0.7); /* 薄い紫のシャドウ */
+}

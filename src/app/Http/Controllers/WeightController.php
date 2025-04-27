@@ -1,36 +1,45 @@
 <?php
 
-namespace App\Http\Controllers;
+
+// app/Http/Controllers/WeightController.php
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\WeightRequest;  // バリデーションリクエストを使う場合
 use Illuminate\Http\Request;
-use App\Http\Requests\WeightRequest;
+use App\Models\WeightLog; // Import the WeightLog model
 
 class WeightController extends Controller
 {
-    // 体重登録画面表示
+    // 初期体重登録画面を表示
     public function create()
     {
         return view('auth.register_step2');
+        $weightLogs = WeightLog::where('user_id', auth()->id())->get();
+
+        return view('weight.index', compact('weightLogs'));
     }
 
-    // 登録処理
+    // 体重データの保存
     public function store(WeightRequest $request)
     {
-        // ユーザーに体重情報を登録（例: ユーザーテーブルに current_weight, target_weight カラムがある前提）
-        $user = auth()->user();
+        // バリデーション済みのデータを取得
+        $data = $request->validated();
 
-        if (!$user) {
-            return redirect()->route('login')->withErrors('ログインしてください');
-        }
+        // 体重データを保存（WeightLog モデルを使って保存）
+        // 仮に WeightLog モデルがある場合
+        // WeightLog::create($data);
 
-        // 正常処理
-        $user->update([
-            'current_weight' => $request->current_weight,
-            'target_weight'  => $request->target_weight,
-        ]);
+        // 次のステップに遷移
+        return redirect()->route('nextStep');  // 例えば次のステップのルートへ遷移
+    }
+    public function index()
+    {
+        $weightLogs = WeightLog::where('user_id', auth()->id())->paginate(7); // ←ページネーションにしてね
+        $targetWeight = 45.0; // 仮に45kg
+        $latestWeight = optional($weightLogs->first())->weight ?? null;
+        $targetDifference = $latestWeight ? $latestWeight - $targetWeight : null;
 
-        return redirect()->route('weight.register.step2')->with('success', '体重が登録されました！');
+        return view('weight.index', compact('weightLogs'));
     }
 }

@@ -1,0 +1,103 @@
+/* 全体背景 */
+/* body */
+body {
+  background-color: #fefefe;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+}
+
+/* ヘッダー */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ロゴ */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f472b6;
+}
+
+/* ヘッダーボタン */
+.header-button {
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.header-button:hover {
+  background-color: #f9f9f9;
+}
+
+/* 目標体重カード */
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* データ追加ボタン */
+.add-button {
+  background: linear-gradient(to right, #f472b6, #fb7185);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.add-button:hover {
+  opacity: 0.8;
+}
+
+/* テーブル */
+.table-container {
+  background: white;
+  border-radius: 1rem;
+  overflow-x: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f3f4f6;
+}
+
+tr:hover {
+  background-color: #f9fafb;
+}
+
+/* ページネーション */
+.pagination .active span {
+  background-color: #f472b6;
+  color: white;
+  border-radius: 9999px;
+}
+
+.pagination a {
+  padding: 0.5rem 0.75rem;
+  margin: 0 0.25rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+}
+
+.pagination a:hover {
+  background-color: #f3f4f6;
+}

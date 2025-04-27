@@ -9,18 +9,10 @@ class WeightLog extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'date',
         'weight',
-        'logged_at',
+        'calories',
+        'exercise_time',
+        'exercise_content',
     ];
-
-    protected $casts = [
-        'logged_at' => 'datetime',
-    ];
-
-    // ユーザーとのリレーション
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }

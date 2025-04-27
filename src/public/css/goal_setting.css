@@ -1,0 +1,95 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* メインコンテナ */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* ラベル */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* 入力フィールド */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* エラーメッセージ */
+.text-danger {
+    font-size: 12px;
+    color: red;
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 12px 32px; /* 横幅を広く、縦の余白も調整 */
+    background: linear-gradient(to right, #ec4899, #8b5cf6); /* グラデーションの色 */
+    color: white; /* 文字色 */
+    border: none; /* ボーダーなし */
+    border-radius: 6px; /* 角を丸くする */
+    font-size: 1rem; /* フォントサイズ */
+    cursor: pointer; /* カーソルをポインタにする */
+    transition: opacity 0.2s ease; /* ホバー時などの遷移 */
+    width: auto; /* 横幅を自動調整 */
+    max-width: 200px; /* 最大幅を少し広げる */
+}
+
+/* ホバー時のスタイル */
+button:hover {
+    opacity: 0.8; /* ホバー時に少し透明にする */
+}
+
+/* ボタンを横並びに配置 */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* ボタン間にスペースを開ける */
+    gap: 10px; /* ボタン間の隙間 */
+}
+
+/* 戻るボタンのスタイル */
+a.back-button {
+    color: #333; /* 戻るボタンの文字色 */
+    text-decoration: none;
+    padding: 12px 32px; /* 戻るボタンも広げる */
+    font-size: 1rem; /* フォントサイズ */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 6px; /* 角を丸くする */
+    transition: background 0.3s ease, border-color 0.3s ease;
+    width: auto; /* 戻るボタンも自動調整 */
+    max-width: 200px; /* 最大幅を広げる */
+}
+
+/* 戻るボタンのホバー時のスタイル */
+a.back-button:hover {
+    background: #f1f1f1; /* ホバー時に背景色を変更 */
+    border-color: #999; /* 枠線の色を変更 */
+}
