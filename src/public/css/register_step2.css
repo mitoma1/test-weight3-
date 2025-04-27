@@ -6,7 +6,6 @@ body {
     background: linear-gradient(to bottom right, #f5d0fe, #fbd8e9); /* 薄い紫から淡いピンクのグラデーション */
     font-family: 'Helvetica Neue', sans-serif;
     color: #333;
-}
 
 .min-h-screen {
     display: flex;
@@ -105,4 +104,5 @@ body {
 /* ボタンの下の余白を調整 */
 button[type="submit"] {
     margin-top: 2rem; /* ボタンとフォーム間の余白を増やす */
+}
 }
