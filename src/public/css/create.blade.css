@@ -11,7 +11,7 @@ body {
 h1 {
     text-align: center;
     margin-top: 30px;
-    color: #4CAF50;
+    color: #020f03;
 }
 
 /* フォームのスタイル */
@@ -84,7 +84,7 @@ button.update-button:active {
 
 /* 戻るボタンのスタイル */
 button.back-button {
-    background: linear-gradient(to right, #c5a7d5, #9c79d2); /* 淡い紫色のグラデーション */
+    background: linear-gradient(to right, #948a9a, #75717a); /* 淡い紫色のグラデーション */
     color: white; /* テキストの色は白 */
     border: none; /* ボーダーなし */
     border-radius: 20px; /* 角丸（更新ボタンと同じ形） */
@@ -97,7 +97,7 @@ button.back-button {
 
 /* ホバー時のスタイル */
 button.back-button:hover {
-    background: linear-gradient(to right, #9c79d2, #c5a7d5); /* グラデーションを逆転 */
+    background: linear-gradient(to right, #6e6877, #928b95); /* グラデーションを逆転 */
     transform: scale(1.05); /* 少し大きくなるエフェクト */
 }
 

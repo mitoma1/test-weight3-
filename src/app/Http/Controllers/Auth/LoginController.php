@@ -17,10 +17,18 @@ class LoginController extends Controller
     public function login(LoginRequest $request)
     {
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/dashboard'); // 体重管理画面
+            return redirect()->route('weight_logs.index');  // 体重管理画面
         }
 
         return back()->withErrors(['email' => 'メールアドレスかパスワードが正しくありません。'])
             ->withInput();
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();  // 認証情報をクリアする
+        $request->session()->invalidate();  // セッションを無効にする
+        $request->session()->regenerateToken();  // セッションのCSRFトークンを再生成する
+
+        return redirect('/');  // ログアウト後のリダイレクト先（ホームページやログインページ）
     }
 }

@@ -1,19 +1,10 @@
-/* 全体背景 */
-/* body */
+/* ベース設定 */
 body {
-  background-color: #fefefe;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f8f8f8;
   color: #333;
-}
-
-/* ヘッダー */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin: 0;
+  padding: 0;
 }
 
 /* ロゴ */
@@ -23,81 +14,220 @@ body {
   color: #f472b6;
 }
 
-/* ヘッダーボタン */
-.header-button {
-  border: 1px solid #ddd;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s;
+/* ヘッダー */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-.header-button:hover {
-  background-color: #f9f9f9;
-}
-
-/* 目標体重カード */
-.card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-/* データ追加ボタン */
-.add-button {
-  background: linear-gradient(to right, #f472b6, #fb7185);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 9999px;
+.header-title {
+  font-size: 32px;
   font-weight: bold;
+  color: #dd79c1; /* ピンクパープル */
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  background: linear-gradient(to right, #b38cfc, #f49ac2);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
   transition: opacity 0.3s;
 }
 
-.add-button:hover {
+.button:hover {
+  opacity: 0.8;
+}
+
+/* 目標体重セクション */
+.target-weight-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.target-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  min-width: 200px;
+}
+
+.target-card h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #888;
+}
+
+.target-card p {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+/* 検索フォーム */
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 20px 10px;
+  flex-wrap: wrap;
+}
+
+.search-form input,
+.search-form select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* 検索用のリセットボタンだけ別デザイン */
+.reset-button {
+  background: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #ccc;
+}
+
+/* データ追加ボタン */
+.add-data-button {
+  background: linear-gradient(to right, #b38cfc, #f49ac2);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  margin-left: 10px;
+}
+
+.add-data-button:hover {
   opacity: 0.8;
 }
 
 /* テーブル */
 .table-container {
-  background: white;
-  border-radius: 1rem;
-  overflow-x: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 20px;
 }
 
-table {
+.table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
-  padding: 1rem;
-  text-align: left;
+.table th,
+.table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
 }
 
-th {
-  background-color: #f3f4f6;
+.table th {
+  color: #888;
+  font-weight: normal;
 }
 
-tr:hover {
-  background-color: #f9fafb;
+.edit-icon {
+  cursor: pointer;
+  color: #b38cfc;
 }
 
-/* ページネーション */
-.pagination .active span {
-  background-color: #f472b6;
+/* レスポンシブ対応（スマホ） */
+@media (max-width: 768px) {
+  .target-weight-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+  }
+}
+.card {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.add-data-button {
+  background: linear-gradient(90deg, #b38cfc, #f49ac2);
   color: white;
-  border-radius: 9999px;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.add-data-button:hover {
+  background: linear-gradient(90deg, #e661ac, #FF4500);
+}
+.card {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
-.pagination a {
-  padding: 0.5rem 0.75rem;
-  margin: 0 0.25rem;
-  border-radius: 9999px;
-  transition: background-color 0.2s;
-}
-
-.pagination a:hover {
-  background-color: #f3f4f6;
+/* スマホでは縦並びにする（オプション） */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

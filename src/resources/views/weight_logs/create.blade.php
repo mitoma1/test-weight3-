@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>体重記録 - 新規登録</title>
+    <title>体重記録 - 新規作成</title>
     <!-- CSSのリンク -->
     <link rel="stylesheet" href="{{ asset('css/create.blade.css') }}">
 </head>
 
 <body>
     <div class="container">
-        <h1>体重記録 新規登録</h1>
+        <h1>Weight Log</h1>
 
         <!-- エラーメッセージ表示 -->
         @if(session('error'))
@@ -20,9 +20,10 @@
         </div>
         @endif
 
-        <!-- フォーム -->
+        <!-- 作成フォーム -->
         <form action="{{ route('weight_logs.store') }}" method="POST">
             @csrf
+
             <div class="form-group">
                 <label for="date">日付</label>
                 <input type="date" id="date" name="date" class="form-control" value="{{ old('date') }}" required>
@@ -40,7 +41,7 @@
             </div>
 
             <div class="form-group">
-                <label for="calories">摂取カロリー (kcal)</label>
+                <label for="calories">摂取カロリー</label>
                 <input type="number" id="calories" name="calories" class="form-control" value="{{ old('calories') }}">
                 @error('calories')
                 <div class="text-danger">{{ $message }}</div>
@@ -48,7 +49,7 @@
             </div>
 
             <div class="form-group">
-                <label for="exercise_time">運動時間 (分)</label>
+                <label for="exercise_time">運動時間</label>
                 <input type="number" id="exercise_time" name="exercise_time" class="form-control" value="{{ old('exercise_time') }}">
                 @error('exercise_time')
                 <div class="text-danger">{{ $message }}</div>
@@ -64,11 +65,12 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">登録</button>
+                <button type="submit" class="btn btn-primary">作成</button>
                 <a href="{{ route('weight_logs.index') }}">
                     <button type="button" class="btn btn-secondary">戻る</button>
                 </a>
             </div>
+
         </form>
     </div>
 </body>

@@ -58,13 +58,14 @@ class WeightLogController extends Controller
     // 新規登録処理（フォームリクエスト使用）
     public function store(WeightLogRequest $request)
     {
+
         WeightLog::create([
             'user_id' => Auth::id(),
             'date' => $request->date,
             'weight' => $request->weight,
             'calories' => $request->calories,
             'exercise_time' => $request->exercise_time,
-            'exercise_description' => $request->exercise_description,
+            'exercise_content' => $request->exercise_content,
         ]);
 
         return redirect()->route('weight_logs.index')->with('success', '登録しました！');
@@ -139,18 +140,14 @@ class WeightLogController extends Controller
             'goal_weight.regex'    => '小数点は1桁で入力してください',
         ]);
 
-        $targetWeight = WeightTarget::where('user_id', Auth::id())->first();
 
-        if ($targetWeight) {
-            $targetWeight->update([
-                'target_weight' => $request->goal_weight
-            ]);
-        } else {
-            WeightTarget::create([
-                'user_id' => Auth::id(),
-                'target_weight' => $request->goal_weight
-            ]);
-        }
+
+        // 更新 or 作成
+        WeightTarget::updateOrCreate(
+            ['user_id' => Auth::id()],
+            ['target_weight' => $request->goal_weight]
+        );
+
 
         return redirect()->route('weight_logs.index');
     }

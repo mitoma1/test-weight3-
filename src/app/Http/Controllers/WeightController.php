@@ -31,7 +31,7 @@ class WeightController extends Controller
         // WeightLog::create($data);
 
         // 次のステップに遷移
-        return redirect()->route('nextStep');  // 例えば次のステップのルートへ遷移
+        return redirect()->route('weight_logs.index');  // 例えば次のステップのルートへ遷移
     }
     public function index()
     {

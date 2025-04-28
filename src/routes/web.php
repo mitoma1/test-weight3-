@@ -46,6 +46,4 @@ Route::delete('/weight_logs/{weightLogId}', [WeightLogController::class, 'destro
 Route::get('/weight_logs/goal_setting', [WeightLogController::class, 'goalSetting'])->name('weight_logs.goal_setting');
 Route::post('/weight_logs/goal_setting', [WeightLogController::class, 'updateGoalWeight']);
 // 体重検索ページ
-Route::get('/weight-logs/search', [WeightLogController::class, 'search'])->name('weight_logs.search');
-
-Route::resource('weight_logs', WeightLogController::class);
+Route::get('/weight_logs/search', [WeightLogController::class, 'search'])->name('weight_logs.search');
